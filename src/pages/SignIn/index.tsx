@@ -1,10 +1,10 @@
 import React from 'react';
-import { KeyboardAvoidingView, Platform, ScrollView, View } from  'react-native';
+import { View, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 
-import Input from '../../components/Input'
-import Button from '../../components/Button'
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import {
   Container,
@@ -22,32 +22,36 @@ const SignIn: React.FC = () => {
   return (
     <>
       <KeyboardAvoidingView
-        style={{ flex:1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined }
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1}}
-        >
+        <ScrollView keyboardShouldPersistTaps="handled">
           <Container>
-              <View>
-               <Title>Glory Manager</Title>
-              </View>
+            <View style={{ alignItems: 'center' }}>
+              <Title>Glory Manager</Title>
 
-              <View>
-                <SubTitle>Crie sua conta</SubTitle>
-              </View>
+              <SubTitle>Crie sua conta</SubTitle>
+            </View>
 
-            <Input name="email" icon="mail" placeholder="E-mail"/>
-            <Input name="password" icon="lock" placeholder="Senha"/>
+            <Input name="email" icon="mail" placeholder="E-mail" />
+            <Input name="password" icon="lock" placeholder="Senha" />
 
-            <Button onPress={() => {}}>Entrar</Button>
+            <Button
+              onPress={() => {
+                console.log('foi');
+              }}
+            >
+              Entrar
+            </Button>
 
-            <ForgotPassword onPress={() => {}}>
+            <ForgotPassword
+              onPress={() => {
+                console.log('foi');
+              }}
+            >
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
-
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -58,6 +62,6 @@ const SignIn: React.FC = () => {
       </CreateAccountButton>
     </>
   );
-}
+};
 
 export default SignIn;
