@@ -20,7 +20,7 @@ export const SubTitle = styled.Text`
   color: #941fbd;
   font-size: 24px;
   font-family: 'RobotoSlab-Regular';
-  margin: 54px 0 24px;
+  margin: 34px 0 24px;
 `;
 
 export const BackToSignIn = styled.TouchableOpacity`
