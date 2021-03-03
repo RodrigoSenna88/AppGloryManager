@@ -14,7 +14,7 @@ import {
   BackToSignInText,
 } from './styles';
 
-const CreateStudent: React.FC = () => {
+const CreatePayment: React.FC = () => {
   const navigation = useNavigation();
 
   return (
@@ -29,42 +29,32 @@ const CreateStudent: React.FC = () => {
             <View style={{ alignItems: 'center' }}>
               <Title>Glory Manager</Title>
 
-              <SubTitle>Nova Matrícula</SubTitle>
+              <SubTitle>Adicionar novo pagamento</SubTitle>
             </View>
 
-            <Input name="manager" icon="user" placeholder="Professor(a)" />
+            <Input name="register_id" icon="user" placeholder="Matrícula" />
 
-            <Input name="name" icon="user" placeholder="Nome" />
+            <Input name="month" icon="calendar" placeholder="Mês" />
 
-            <Input name="responsável" icon="user" placeholder="Responsável" />
-
-            <Input name="phone" icon="phone" placeholder="Telefone" />
-
-            <Input
-              name="startDate"
-              icon="calendar"
-              placeholder="Data de matrícula"
-            />
-
-            <Input name="schedule" icon="clock" placeholder="Turno" />
+            <Input name="payment" icon="dollar-sign" placeholder="Pagamento" />
 
             <Button
               onPress={() => {
                 console.log('foi');
               }}
             >
-              Matricular
+              Registrar pagamento
             </Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
 
-      <BackToSignIn onPress={() => navigation.navigate('Dashboard')}>
+      <BackToSignIn onPress={() => navigation.navigate(`student/:id`)}>
         <Icon name="arrow-left" size={20} color="#941FBD" />
-        <BackToSignInText>Voltar para dasboard</BackToSignInText>
+        <BackToSignInText>Voltar para página do aluno</BackToSignInText>
       </BackToSignIn>
     </>
   );
 };
 
-export default CreateStudent;
+export default CreatePayment;
